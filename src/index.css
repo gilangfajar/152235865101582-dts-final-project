@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+   @apply bg-blue-500 flex-1 rounded-lg relative overflow-hidden;
+    
+}
+
+.card::before {
+    content: '';
+    @apply bg-indigo-800 h-64 w-1/2 absolute rounded-r-full;
+}
+
+.card::after {
+    content: '';
+    @apply bg-cyan-300 h-32 w-32 absolute -right-8 -top-8 rounded-full;
+}
+
+.content {
+    @apply p-4 flex-1 flex flex-col justify-between;
 }
